@@ -1,0 +1,19 @@
+{
+  "name": "dnbkitchen",
+  "version": "1.0.0",
+  "description": "Website for DNB Kitchen",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leightongrantham/dnbkitchen.git"
+  },
+  "author": "Leighton Grantham",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leightongrantham/dnbkitchen/issues"
+  },
+  "homepage": "https://github.com/leightongrantham/dnbkitchen#readme"
+}
