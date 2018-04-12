@@ -1,0 +1,79 @@
+{% set settings = settings | default({}) | merge({
+  siteName: 'Front',
+  siteDesc: '',
+  helper: true
+}) %}
+
+<!doctype html>
+
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="description" content="{{settings.siteDesc}}" />
+    <title>{% if title is defined %}{{title}} &mdash; {{settings.siteName}}{% else %}{{settings.siteName}}{% endif %}</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="apple-mobile-web-app-title" content="{{settings.siteName}}" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    {#
+    {% include '../_partials/favicon.html' %}
+    #}
+
+    <link rel="stylesheet" href="/static/styles/main.css" />
+  </head>
+
+  <body{% if bodyClass is defined %} class="{{bodyClass}}"{% endif %}>
+    <div class="app{% if settings.helper == true %}  rel{% endif %}">
+      {% if settings.helper == true %}
+        {% include '../_partials/helper.html' with { grid: true, cols: '24', width: '1' } %}
+      {% endif %}
+
+      <header class="ph5">
+        <div class="pv3">
+          <h1 class="t6  fw7  lh-title  almost-black  mb0">DNB Kitchen</h1>
+        </div>
+      </header>
+
+      {% include '../_partials/nav.html' %}
+
+      <main role="main">
+        {% block content %}
+          <p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
+          <p>See Twig&rsquo;s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance" target="_blank" rel="noopener">Template Inheritance</a> documentation for an explanation.</p>
+        {% endblock %}
+      </main>
+    </div>
+
+
+    <script>
+      // Safari 10.1 supports modules, but does not support the `nomodule`
+      // attribute - it will load <script nomodule> anyway
+      // https://gist.github.com/samthor/64b114e4a4f539915a95b91ffd340acc
+      (function() {
+        var d = document;
+        var c = d.createElement('script');
+        if (!('noModule' in c) && 'onbeforeload' in c) {
+          var s = false;
+          d.addEventListener('beforeload', function (e) {
+            if (e.target === c) {
+              s = true;
+            } else if (!e.target.hasAttribute('nomodule') || !s) {
+              return;
+            }
+            e.preventDefault();
+          }, true);
+          c.type = 'module';
+          c.src = '.';
+          d.head.appendChild(c);
+          c.remove();
+        }
+      }());
+    </script>
+
+    <script type="module" src="/static/scripts/bundle.js"></script>
+    <script nomodule src="/static/scripts/bundle-legacy.js"></script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+{% extends '../../_layouts/master.html' %}
+
+{% set title = 'LazyLoad' %}
+
+{% block content %}
+
+  <section class="section  rel  pa5">
+    <header class="mb5">
+      <h1 class="t6  fw7  lh-title  mb3">LazyLoad</h1>
+      <p class="measure-wide  t5  fw3  lh-copy  mb0">Load non critical images on scroll using the Intersection Observer API. See <a class="link  blue" href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API">https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API</a> for more information.</p>
+    </header>
+
+    <div class="flex  ph3  nh4">
+      <div class="col-12  pa3">
+        <figure class="">
+          <img class="w-100" src="https://placehold.it/800x600" width="800" height="600" alt="" />
+        </figure>
+      </div>
+    </div>
+
+    {% for i in 1..3 %}
+      <div class="flex  {{ i == 1 or i == 3 ? 'justify-end' }}  nh4">
+        <div class="col-12 pa3">
+          <figure class="">
+            <img class="w-100" width="800" height="600" alt="" data-src="https://placehold.it/800x600" />
+          </figure>
+        </div>
+      </div>
+    {% endfor %}
+  </section>
+
+{% endblock %}

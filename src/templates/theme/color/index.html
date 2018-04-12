@@ -1,0 +1,49 @@
+{% extends '../../_layouts/master.html' %}
+
+{% set title = 'Color' %}
+
+{% set colors = [
+  'black',
+  'almost-black',
+  'dark-grey',
+  'mid-grey',
+  'grey',
+  'silver',
+  'light-silver',
+  'moon-grey',
+  'light-grey',
+  'almost-white',
+  'white',
+  'red',
+  'blue'
+] %}
+
+{% block content %}
+
+  <section class="section  rel  pa5">
+    <header class="mb5">
+      <h1 class="t6  fw7  lh-title  mb3">{{title}}</h1>
+      <p class="measure-wide  t5  fw3  lh-copy  mb0">Some introduction to color here.</p>
+    </header>
+
+    {#
+    <div class="w-100  mw5  pa4  mb5  bg-almost-white">
+      {% set code = '<h1 class="measure  t1  lh-title  mb5">...</h1>' %}
+      <pre class="ma0"><code class="measure-wide  db  mono  t8  lh-title  grey  language-html">{{code|e}}</code></pre>
+    </div>
+    #}
+
+    <div class="flex  flex-wrap  nh2">
+      {% for color in colors %}
+        <div class="col-6  pa2">
+          {% if (color == 'white') or (color == 'almost-white') or (color == 'light-grey') %}
+            <div class="t6  lh-title  pa3  bg-{{color}}">{{color}}</div>
+          {% else %}
+            <div class="t6  lh-title  pa3  white  bg-{{color}}">{{color}}</div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+{% endblock %}

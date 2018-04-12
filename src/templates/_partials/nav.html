@@ -1,0 +1,71 @@
+<nav class="ph5  moon-grey  bt  bb">
+  <div class="flex  pv4">
+    {% set typography = [
+      {
+        title: 'Welcome to dnb kitchen!',
+        link: '/typography/font-size'
+      }
+    ] %}
+
+    <div class="col-6">
+      <h2 class="t7  fw7  lh-title  almost-black  mb2">Home</h2>
+
+      {% for page in typography %}
+        <div class="lh-copy">
+          <a class="t7  link  blue" href="{{page.link}}">{{page.title}}</a>
+        </div>
+      {% endfor %}
+    </div>
+
+    {% set theme = [
+      {
+        title: 'Click here for info on our music & releases.',
+        link: '/theme/color'
+      }
+    ] %}
+
+    <div class="col-6">
+      <h2 class="t7  fw7  lh-title  almost-black  mb2">Music</h2>
+
+      {% for page in theme %}
+        <div class="lh-copy">
+          <a class="t7  link  blue" href="{{page.link}}">{{page.title}}</a>
+        </div>
+      {% endfor %}
+    </div>
+
+    {% set functions = [
+      {
+        title: 'Who are dnb kitchen?',
+        link: '/functions/lazy-load'
+      }
+    ] %}
+
+    <div class="col-6">
+      <h2 class="t7  fw7  lh-title  almost-black  mb2">About</h2>
+
+      {% for page in functions %}
+        <div class="lh-copy">
+          <a class="t7  link  blue" href="{{page.link}}">{{page.title}}</a>
+        </div>
+      {% endfor %}
+    </div>
+
+    {% set contact = [
+    {
+      title: 'Get in touch!',
+      link: '/functions/lazy-load'
+    }
+    ] %}
+
+    <div class="col-6">
+      <h2 class="t7  fw7  lh-title  almost-black  mb2">Contact</h2>
+
+      {% for page in contact %}
+        <div class="lh-copy">
+          <a class="t7  link  blue" href="{{page.link}}">{{page.title}}</a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</nav>

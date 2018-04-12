@@ -1,0 +1,99 @@
+{% extends './_layouts/master.html' %}
+
+{#
+{% set title = '' %}
+{% set bodyClass = '' %}
+#}
+
+{% set sections = [
+  'Typography',
+  'Color',
+  'Spacing',
+  'Grid',
+  'Box Shadow',
+  'Border Radius'
+] %}
+
+{% set colors = [
+  'black',
+  'almost-black',
+  'dark-grey',
+  'mid-grey',
+  'grey',
+  'silver',
+  'light-silver',
+  'moon-grey',
+  'light-grey',
+  'almost-white',
+  'white',
+  'red',
+  'blue'
+] %}
+
+{% block content %}
+
+  {#
+  <div class="fix  top  left  w5  h-100">
+    <div class="flex  flex-column  h-100  ph4  pv5  br">
+      <h1 class="t5  fw3  mb3">front</h1>
+
+      {% for section in sections %}
+        <div class="pv1">
+          <a class="link  dark-blue  dark-grey-hover  t7  fw7  lh-copy" href="/" data-nav-target="{{section}}">{{section}}</a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  #}
+
+  <div class="rel  pv5">
+    <section class="pv5" data-nav-section="Grid">
+      <div class="ph5">
+        <header class="mb5">
+          <h1 class="t6  fw7  lh-title  mb3">Grid</h1>
+
+          <div class="measure-wide">
+            <p class="t5  fw3  lh-copy">You can combine flexbox, padding, and negative margins to construct a wide variety of grids. Here is a basic example of some options for constructing a simple grid.</p>
+          </div>
+        </header>
+
+        <div class="flex  flex-row  flex-wrap  nh2">
+          <div class="col-12  ph2  mb3">
+            <div class="pv3  t7  mono  tac  grey  bg-light-grey">col-12</div>
+          </div>
+          <div class="col-2  ph2  mb3">
+            <div class="pv3  t7  mono  tac  grey  bg-light-grey">col-2</div>
+          </div>
+          <div class="col-10  ph2  mb3">
+            <div class="pv3  t7  mono  tac  grey  bg-light-grey">col-10</div>
+          </div>
+          <div class="col-4  ph2  mb3">
+            <div class="pv3  t7  mono  tac  grey  bg-light-grey">col-4</div>
+          </div>
+          <div class="col-8  ph2  mb3">
+            <div class="pv3  t7  mono  tac  grey  bg-light-grey">col-8</div>
+          </div>
+          {% for i in 1..2 %}
+            <div class="col-6  ph2  mb3">
+              <div class="pv3  t7  mono  tac  grey  bg-light-grey">col-6</div>
+            </div>
+          {% endfor %}
+          <div class="col-8  ph2  mb3">
+            <div class="pv3  t7  mono  tac  grey  bg-light-grey">col-8</div>
+          </div>
+          <div class="col-4  ph2  mb3">
+            <div class="pv3  t7  mono  tac  grey  bg-light-grey">col-4</div>
+          </div>
+          <div class="col-10  ph2  mb3">
+            <div class="pv3  t7  mono  tac  grey  bg-light-grey">col-10</div>
+          </div>
+          <div class="col-2  ph2  mb3">
+            <div class="pv3  t7  mono  tac  grey  bg-light-grey">col-2</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+{% endblock %}
