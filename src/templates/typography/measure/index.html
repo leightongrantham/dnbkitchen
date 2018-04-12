@@ -1,0 +1,44 @@
+{% extends '../../_layouts/master.html' %}
+
+{% set title = 'Measure' %}
+
+{% block content %}
+
+  <section class="section  rel  pa5">
+    <header class="mb5">
+      <h1 class="t6  fw7  lh-title  mb3">Measure</h1>
+      <p class="measure-wide  t5  fw3  lh-copy  mb0">Some introduction to measure here.</p>
+    </header>
+
+    <div class="mb4">
+      <p class="measure-wide  t6  fw3  lh-copy  mb1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <span class="dib  pl1  t7  lh-copy  light-silver">~80 characters</span>
+    </div>
+
+    <div class="w-100  mw5  pa4  mb5  bg-almost-white">
+      {% set code = '<p class="measure-wide  t6  fw3  lh-copy  mb0">...</p>' %}
+      <pre class="ma0"><code class="measure-wide  db  mono  t8  lh-title  grey  language-html">{{code|e}}</code></pre>
+    </div>
+
+    <div class="mb4">
+      <p class="measure  t6  fw3  lh-copy  mb1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <span class="dib  pl1  t7  lh-copy  light-silver">~60 characters</span>
+    </div>
+
+    <div class="w-100  mw5  pa4  mb5  bg-almost-white">
+      {% set code = '<p class="measure  t6  fw3  lh-copy  mb0">...</p>' %}
+      <pre class="ma0"><code class="measure-wide  db  mono  t8  lh-title  grey  language-html">{{code|e}}</code></pre>
+    </div>
+
+    <div class="mb4">
+      <p class="measure-narrow  t6  fw3  lh-copy  mb1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <span class="dib  pl1  t7  lh-copy  light-silver">~45 characters</span>
+    </div>
+
+    <div class="w-100  mw5  pa4  bg-almost-white">
+      {% set code = '<p class="measure-narrow  t6  fw3  lh-copy  mb0">...</p>' %}
+      <pre class="ma0"><code class="measure-wide  db  mono  t8  lh-title  grey  language-html">{{code|e}}</code></pre>
+    </div>
+  </section>
+
+{% endblock %}

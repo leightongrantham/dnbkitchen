@@ -1,19 +1,83 @@
 {
-  "name": "dnbkitchen",
-  "version": "1.0.0",
-  "description": "Website for DNB Kitchen",
-  "main": "index.js",
+  "paths": {
+    "src": {
+      "root": "./src/",
+      "js": "./src/static/scripts/",
+      "css": "./src/static/styles/",
+      "images": "./src/static/images/",
+      "fonts": "./src/static/fonts/",
+      "templates": "./src/templates/"
+    },
+    "dist": {
+      "root": "./public/",
+      "js": "./public/static/scripts/",
+      "css": "./public/static/styles/",
+      "images": "./public/static/images/",
+      "fonts": "./public/static/fonts/"
+    },
+    "build": {
+      "root": "./build/",
+      "js": "./build/static/scripts/",
+      "css": "./build/static/styles/",
+      "img": "./build/static/images/",
+      "fonts": "./build/static/fonts/"
+    }
+  },
+  "dependencies": {
+    "moveto": "^1.7.1",
+    "prismjs": "^1.13.0",
+    "webfontloader": "^1.6.28"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.2.3",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.3",
+    "babel-loader": "^7.1.4",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-webpack-plugin": "^0.1.1",
+    "browser-sync": "^2.23.6",
+    "chai": "^4.1.2",
+    "css-mqpacker": "^6.0.2",
+    "cssnano": "^3.10.0",
+    "eslint-config-airbnb-base": "^11.3.2",
+    "eslint-plugin-import": "^2.10.0",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.4.0",
+    "gulp-eslint": "^4.0.0",
+    "gulp-htmlmin": "^4.0.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-prettify": "^0.5.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-size": "^3.0.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-stylelint": "^5.0.0",
+    "gulp-twig": "^1.1.0",
+    "gulp-util": "^3.0.8",
+    "jsdom": "^11.7.0",
+    "jsdom-global": "^3.0.2",
+    "mocha": "^5.0.5",
+    "postcss-reporter": "^5.0.0",
+    "postcss-scss": "^1.0.5",
+    "run-sequence": "^2.2.1",
+    "stylelint": "^9.2.0",
+    "stylelint-config-standard": "^18.2.0",
+    "uglifyjs-webpack-plugin": "^1.1.4",
+    "webpack": "^3.10.0",
+    "webpack-stream": "^4.0.3"
+  },
   "scripts": {
-    "test": "npm test"
+    "build": "NODE_ENV=production gulp build --production",
+    "test": "mocha --require babel-core/register \"test/**/*.test.js\" || true"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/leightongrantham/dnbkitchen.git"
-  },
-  "author": "Leighton Grantham",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/leightongrantham/dnbkitchen/issues"
-  },
-  "homepage": "https://github.com/leightongrantham/dnbkitchen#readme"
+  "browserslist": {
+    "production": [
+      "> 1%",
+      "last 2 versions",
+      "IE 10"
+    ]
+  }
 }
